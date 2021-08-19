@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ControlPresupuesto } from './components/ControlPresupuesto';
 import { Formulario } from './components/Formulario';
 import { Listado } from './components/Listado';
-import Pregunta from './components/Pregunta';
+import { Pregunta } from './components/Pregunta';
 
 function App() {
   const [presupuesto, setPresupuesto] = useState(0);

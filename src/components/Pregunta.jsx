@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Error } from './Error';
 
-const Pregunta = ({ setPresupuesto, setRestante, setPregunta }) => {
+export const Pregunta = ({ setPresupuesto, setRestante, setPregunta }) => {
   // State para el presupuesto
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
@@ -57,5 +57,3 @@ Pregunta.propTypes = {
   setRestante: PropTypes.func.isRequired,
   setPregunta: PropTypes.func.isRequired
 };
-
-export default Pregunta;

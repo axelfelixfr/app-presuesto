@@ -58,7 +58,7 @@ export const Formulario = ({ guardarGasto, guardarCrearGasto }) => {
           placeholder="Ej. 300"
           value={cantidad}
           // Parseamos el elemento a entero con parseInt()
-          onChange={e => setCantidad(parseInt(e.target.value, 10))}
+          onChange={e => setCantidad(parseInt(e.target.value) || cantidad)}
         />
       </div>
 
