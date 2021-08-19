@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Error } from './Error';
 
-const Pregunta = ({ setPresupuesto, setRestante }) => {
+const Pregunta = ({ setPresupuesto, setRestante, setPregunta }) => {
   // State para el presupuesto
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
@@ -21,10 +21,13 @@ const Pregunta = ({ setPresupuesto, setRestante }) => {
       return;
     }
 
-    // Si se pasa la validación
+    // Si se pasa la validación y hubo error se ocultará
     setError(false);
+
     setPresupuesto(cantidad);
     setRestante(cantidad);
+    // Se pasará a false una vez haya enviado el formulario del presupuesto a evaluar
+    setPregunta(false);
   };
   return (
     <>
@@ -35,6 +38,7 @@ const Pregunta = ({ setPresupuesto, setRestante }) => {
           type="number"
           className="u-full-width"
           placeholder="Coloca tu presupuesto"
+          value={cantidad}
           onChange={definirPresupuesto}
         />
         <input
