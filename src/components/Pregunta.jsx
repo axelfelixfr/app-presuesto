@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Error } from './Error';
 
-const Pregunta = () => {
+const Pregunta = ({ setPresupuesto, setRestante }) => {
   // State para el presupuesto
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
@@ -23,11 +23,13 @@ const Pregunta = () => {
 
     // Si se pasa la validación
     setError(false);
+    setPresupuesto(cantidad);
+    setRestante(cantidad);
   };
   return (
     <>
       <h2>Coloca tu presupuesto</h2>
-      {error && <Error />}
+      {error && <Error mensaje="El presupuesto es incorrecto" />}
       <form onSubmit={agregarPresupuesto}>
         <input
           type="number"

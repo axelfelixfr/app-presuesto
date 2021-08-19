@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const Error = () => (
-  <p className="alert alert-danger error">Hubo un error</p>
+export const Error = ({ mensaje }) => (
+  <p className="alert alert-danger error">{mensaje}</p>
 );
